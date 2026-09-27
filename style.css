@@ -1,15 +1,21 @@
+html{
+  scroll-behavior: smooth;
+}
+
 * {
   padding: 0;
   margin: 0;
 
   font-family: Arial, Helvetica, sans-serif;
+  /*overscroll-behavior: none;*/
 }
 
 body {
   width: 100%;
   min-height: 100vh;
 
-  background-color: #f2e6de;
+  background-color: #1b1e1e;
+
 }
 
 header {
@@ -39,7 +45,7 @@ header {
   width: 121px;
 }
 
-.logo-box img{
+.logo-box img {
   height: 50px;
   width: auto;
   position: relative;
@@ -53,28 +59,25 @@ header {
   gap: 40px;
 }
 
-.nav-bar-box nav button {
-  border: none;
-
-  background-color: transparent;
+.nav-bar-box nav a{
   color: white;
 
   transition: all .2s ease;
 }
 
-.nav-bar-box nav button:hover {
+.nav-bar-box nav a:hover {
   color: orange;
   cursor: pointer;
 }
 
-.cta-header-box{
+.cta-header-box {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 16px;
 }
 
-.user-button{
+.user-button {
   position: relative;
   top: 3px;
   right: 20px;
@@ -84,12 +87,12 @@ header {
   transition: all .2s ease;
 }
 
-.user-button:hover{
+.user-button:hover {
   color: orange;
   cursor: pointer;
 }
 
-.cta-btn-header{
+.cta-btn-header {
   padding: 10px;
 
   border: none;
@@ -168,9 +171,10 @@ header {
 }
 
 .menu-itens-box {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 10px;
 }
 
 .menu-item {
@@ -184,14 +188,16 @@ header {
   overflow: hidden;
 
   text-align: left;
+  box-shadow: 0px 0px 5px 4px #2529297b;
 
-}
-
-.image-item{
   position: relative;
 }
 
-.image-item::after{
+.image-item {
+  position: relative;
+}
+
+.image-item::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -199,26 +205,33 @@ header {
   background: linear-gradient(to bottom, transparent 75%, #1b1e1e 95%);
 }
 
-.menu-item img{
-  height: 200px;
+.menu-item img {
   width: 100%;
+  height: 200px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background-color: #000;
 }
 
-.menu-item h3{
+.menu-item h3 {
   color: white;
   margin: 10px 0
 }
 
-.menu-item p{
+.menu-item p {
   color: gray;
   font-size: 13px;
+  height:50px;
 }
 
-.menu-item p, span, h3{
+.menu-item p,
+.menu-item span,
+h3 {
   padding: 0 20px;
 }
 
-.pay{
+.pay {
   display: flex;
   justify-content: space-between;
   padding-top: 16px;
@@ -227,7 +240,7 @@ header {
   border-image: linear-gradient(to right, transparent, #282828, transparent) 1;
 }
 
-.pay button{
+.pay button {
   margin-right: 20px;
   border: none;
   background-color: orange;
@@ -242,26 +255,27 @@ header {
   transition: all .2s ease;
 }
 
-.pay button:hover{
+.pay button:hover {
   cursor: pointer;
   background-color: white;
   color: orange;
 }
 
-.price-item{
+.price-item {
   display: flex;
   flex-direction: column;
   gap: 5px;
+
 }
 
-.price-item span{
+.price-item span {
   color: rgba(128, 128, 128, 0.805);
   font-size: 15px;
   font-weight: 100;
   opacity: 70%;
 }
 
-.price-item p{
+.price-item p {
   color: white;
   font-weight: bold;
   font-size: 25px;
@@ -278,6 +292,8 @@ header {
   border-top: 3px solid orange;
   border-bottom: 3px solid orange;
   color: white;
+
+  position: relative;
 }
 
 .images-text {
@@ -287,37 +303,56 @@ header {
 .reviews {
   display: flex;
   flex-direction: column;
-  gap: 30px;
 
-  margin: 20px;
-  padding: 30px;
+  text-align: center;
+  padding: 70px 0 0 0 ;
 
-  border-radius: 8px;
-  background-color: white;
+  color: white;
+  background: radial-gradient(circle, #282a2a, #1b1e1e);
 }
 
-.review-itens-box {
+.review-box{
   display: flex;
   flex-direction: column;
-  gap: 20px;
-}
-
-.review-item {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 10px;
-  border-radius: 8px;
-  background-color: rgb(234, 234, 234);
   justify-content: center;
+  align-items: center;
+  margin-top: 30px;
 }
 
-.star-review {
-  font-style: normal;
+.review-card{
+  width: 600px;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 10px 30px;
+  gap: 5px;
+
+  text-align: left;
+
+  border: 1px solid orange;
+  border-radius: 8px;
+  background-color: #353a3a8e;
+  box-shadow: 0 0 5px 5px rgba(255, 166, 0, 0.104);
 }
 
-.review-item span {
-  font-style: italic;
+.review-card h3{
+  margin: 0;
+  padding: 0;
+  font-weight: 100;
+}
+
+.review-card strong{
+  color: orange;
+}
+
+.review-card-header{
+  height: auto;
+  width: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .cta-section {
@@ -355,7 +390,7 @@ footer {
   justify-content: space-around;
 }
 
-.footer-main > div,
+.footer-main>div,
 .footer-links nav {
   display: flex;
   flex-direction: column;
@@ -382,4 +417,46 @@ a:visited {
 .footer-span,
 .span-geral {
   color: orange;
+}
+
+.favorite, .discount{
+  color: gold;
+  position: absolute;
+  z-index: 10;
+  right: 10px;
+  top: 10px;
+  font-size: 12px;
+  border: 1px solid gold;
+  border-radius: 16px;
+  box-shadow: 0 0 5px 5px rgba(255, 217, 0, 0.138);
+  padding: 5px;
+  display: flex;
+}
+
+.discount-price{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+
+  position: relative;
+}
+
+.discount-price span{
+  color: white;
+  font-size: 15px;
+  opacity: 75%;
+  font-weight: bold;
+  text-decoration: line-through;
+  padding-right: 0;
+
+}
+
+.discount-price p{
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 100px;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
 }
